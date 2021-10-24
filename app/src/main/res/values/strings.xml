@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">EdConnect</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_status">LOGIN_STATUS</string>
+    <string name="log_out">LOG_OUT</string>
+    <string name="project_explorer">ARTICLE EXPLORER</string>
+    <string name="welcome_to">WELCOME TO</string>
+    <string name="community">Join a community of writers from various backgrounds</string>
+    <string name="ideas">Share your thoughts with the world</string>
+    <string name="search">Find ideas for your research</string>
+    <string name="organize">Keep track of your favourite articles</string>
+</resources>

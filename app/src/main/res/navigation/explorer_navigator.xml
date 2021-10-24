@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/explorer_navigator"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.decagon.edconnect.presentation.ui.viewcontrollers.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewProjectFragment"
+            app:destination="@id/viewProjectFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createProjectFragment2"
+            app:destination="@id/createProjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.decagon.edconnect.presentation.ui.viewcontrollers.profile.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/createProjectFragment"
+        android:name="com.decagon.edconnect.presentation.ui.viewcontrollers.project.CreateProjectFragment"
+        android:label="fragment_create_project"
+        tools:layout="@layout/fragment_create_project" >
+        <action
+            android:id="@+id/action_createProjectFragment_to_viewProjectFragment"
+            app:destination="@id/viewProjectFragment" />
+        <action
+            android:id="@+id/action_createProjectFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.decagon.edconnect.presentation.ui.viewcontrollers.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectListFragment"
+        android:name="com.decagon.edconnect.presentation.ui.viewcontrollers.project.ProjectListFragment"
+        android:label="fragment_project_list"
+        tools:layout="@layout/fragment_project_list" >
+        <action
+            android:id="@+id/action_projectListFragment_to_viewProjectFragment"
+            app:destination="@id/viewProjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewProjectFragment"
+        android:name="com.decagon.edconnect.presentation.ui.viewcontrollers.project.ViewProjectFragment"
+        android:label="fragment_view_project"
+        tools:layout="@layout/fragment_view_project" />
+</navigation>

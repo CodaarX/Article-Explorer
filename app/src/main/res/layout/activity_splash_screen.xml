@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.viewcontrollers.welcomescreens.SplashScreenActivity">
+
+    <TextView
+        android:id="@+id/welcome_to_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:fontFamily="@font/courgette"
+        android:text="@string/welcome_to"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/article_explorer_textView"
+        android:layout_width="275dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/courgette"
+        android:gravity="center"
+        android:text="@string/project_explorer"
+        android:textSize="20sp"
+        app:tint="@color/white"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/welcome_to_textView"
+        app:layout_constraintStart_toStartOf="@+id/welcome_to_textView"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_to_textView" />
+
+    <ImageView
+        android:id="@+id/logo_imageView"
+        android:layout_width="147dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/article_explorer_textView"
+        app:layout_constraintStart_toStartOf="@+id/article_explorer_textView"
+        app:layout_constraintTop_toBottomOf="@+id/article_explorer_textView"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/explorer"
+        app:tint="@color/white" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="article_explorer_textView,welcome_to_textView" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation_view"
+        android:layout_width="282dp"
+        android:layout_height="112dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/logo_imageView"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="@+id/logo_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/logo_imageView"
+        app:layout_constraintVertical_bias="0.946"
+        app:lottie_autoPlay="true"
+        android:layout_centerHorizontal="true"
+        app:lottie_fileName="progress_bar.json"
+        app:lottie_loop="true" />
+</androidx.constraintlayout.widget.ConstraintLayout>
