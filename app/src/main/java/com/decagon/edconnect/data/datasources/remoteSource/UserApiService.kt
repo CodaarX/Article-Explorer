@@ -12,17 +12,17 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface UserApiService {
-    @POST("/api/user/profile/get/{id}")
+    @POST("api/user/profile/get/{id}")
     suspend fun getProfile(
         @Path("id") id: String
     ): GenericResponseClass<ApiUser>
 
-    @POST("/api/user/profile/update/{id}")
+    @POST("api/user/profile/update/{id}")
     suspend fun updateProfile(
         @Path("id") id: String,
         @Body user: ApiUser
     ): GenericResponseClass<ApiUser>
 
-    @POST("/api/user/logout")
+    @POST("api/user/logout")
     suspend fun logout()
 }

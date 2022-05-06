@@ -24,33 +24,30 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideLogger() : HttpLoggingInterceptor {
+    fun provideLogger(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
-    @Singleton
-    @Provides
-    fun provideHeaderInterceptor(sharedPreferences: SharedPreferences) : Interceptor {
-            return Interceptor { chain ->
-                val request = chain.request().newBuilder()
-//                sharedPreferences.getString(TOKEN, null)?.let {
-//                    request.addHeader("Authorization", "Bearer $it")
-//                }
-                chain.proceed(request.build())
-            }
-        }
+//    @Singleton
+//    @Provides
+//    fun provideHeaderInterceptor(sharedPreferences: SharedPreferences): Interceptor {
+//        return Interceptor { chain ->
+//            val request = chain.request().newBuilder()
+//            chain.proceed(request.build())
+//        }
+//    }
 
     @Singleton
     @Provides
     fun provideOkHttpClient(
-        headerAuthorization: Interceptor,
+//        headerAuthorization: Interceptor,
         logger: HttpLoggingInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .connectTimeout(30L, TimeUnit.SECONDS)
             .readTimeout(30L, TimeUnit.SECONDS)
             .writeTimeout(30L, TimeUnit.SECONDS)
-            .addInterceptor(headerAuthorization)
+//            .addInterceptor(headerAuthorization)
             .addInterceptor(logger)
 //            .connectTimeout(timeOutSec, TimeUnit.MILLISECONDS)
             .build()
@@ -62,7 +59,6 @@ object NetworkModule {
         return GsonConverterFactory.create()
     }
 
-
     @Singleton
     @Provides
     fun provideRetrofitService(client: OkHttpClient, converterFactory: Converter.Factory): Retrofit {
@@ -73,20 +69,17 @@ object NetworkModule {
             .build()
     }
 
-
     @Singleton
     @Provides
     fun provideProjectApiService(retrofit: Retrofit): ProjectApiService {
         return retrofit.create(ProjectApiService::class.java)
     }
 
-
     @Singleton
     @Provides
     fun provideUserApiService(retrofit: Retrofit): UserApiService {
         return retrofit.create(UserApiService::class.java)
     }
-
 
     @Singleton
     @Provides

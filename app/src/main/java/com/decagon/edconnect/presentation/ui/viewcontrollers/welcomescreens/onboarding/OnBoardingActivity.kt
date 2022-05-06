@@ -95,6 +95,7 @@ class OnBoardingActivity : AppCompatActivity() {
             object : ViewPager2.OnPageChangeCallback() {
 
                 override fun onPageSelected(position: Int) {
+
                     super.onPageSelected(position)
                     pagePosition = position
 
